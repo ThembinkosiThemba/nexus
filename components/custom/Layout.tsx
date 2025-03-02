@@ -1,5 +1,6 @@
 import type { ReactNode } from "react";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import {
   Brain,
   Calculator,
@@ -26,6 +27,9 @@ interface DashboardLayoutProps {
 }
 
 export function DashboardLayout({ children }: DashboardLayoutProps) {
+  // Use Next.js's usePathname hook instead of browser's location
+  const pathname = usePathname();
+
   const navigation = [
     {
       name: "Dashboard",
@@ -67,7 +71,7 @@ export function DashboardLayout({ children }: DashboardLayoutProps) {
             </div>
             <nav className="flex-1 space-y-1 px-3 py-4">
               {navigation.map((item) => {
-                const isActive = location.pathname === item.href;
+                const isActive = pathname === item.href;
                 return (
                   <Link
                     key={item.name}
