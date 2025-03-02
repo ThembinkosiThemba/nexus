@@ -27,13 +27,12 @@ interface DashboardLayoutProps {
 }
 
 export function DashboardLayout({ children }: DashboardLayoutProps) {
-  // Use Next.js's usePathname hook instead of browser's location
   const pathname = usePathname();
 
   const navigation = [
     {
       name: "Dashboard",
-      href: "/dashboard/dashboard",
+      href: "/dashboard",
       icon: LayoutIcon,
     },
     {

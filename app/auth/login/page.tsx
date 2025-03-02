@@ -20,7 +20,7 @@ const LoginPage = () => {
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     if (email === "student@university.edu" && password === "password") {
-      router.push("/dashboard/dashboard");
+      router.push("/dashboard");
     } else {
       setError("Invalid credentials. Please try again.");
     }
